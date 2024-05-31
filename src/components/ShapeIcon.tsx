@@ -1,7 +1,16 @@
-import * as React from "react";
-import { ArcBottomLeft, Circle, CircleInverse, Line, LinePlus, LinesVertical, RectFill, TriangleUp } from "./Shapes";
+import * as React from 'react'
+import {
+  ArcBottomLeft,
+  Circle,
+  CircleInverse,
+  Line,
+  LinePlus,
+  LinesVertical,
+  RectFill,
+  TriangleUp
+} from './Shapes'
 
-export const SIZE = 20;
+export const SIZE = 20
 
 export const shapesMap: Record<string, any> = {
   circle: Circle,
@@ -12,41 +21,48 @@ export const shapesMap: Record<string, any> = {
   linesVertical: LinesVertical,
   triangleUp: TriangleUp,
   line: Line
-};
+}
 
-export const shapeNames = Object.keys(shapesMap);
+export const shapeNames = Object.keys(shapesMap)
 
 export interface ShapeProps {
-  name: string;
-  color: string;
-  x?: number;
-  y?: number;
-  rotate?: number;
-  scale?: number;
-  size: number;
-  strokeWidth: number;
+  name: string
+  color: string
+  x?: number
+  y?: number
+  rotate?: number
+  scale?: number
+  size: number
+  strokeWidth: number
 }
-// grid-column-gap
-export function Shape({ name, x = 0, y = 0, rotate, scale, color = "currentColor", size, strokeWidth }: ShapeProps) {
-  const xFull = x * size;
-  const yFull = y * size;
-  let transform = `translate(${xFull},${yFull})`;
+
+export function Shape({
+  name,
+  x = 0,
+  y = 0,
+  rotate,
+  scale,
+  color = 'currentColor',
+  size,
+  strokeWidth
+}: ShapeProps) {
+  const xFull = x * size
+  const yFull = y * size
+  let transform = `translate(${xFull},${yFull})`
   if (rotate || scale) {
-    transform = `translate(${xFull+size/2},${yFull+size/2})` 
+    transform = `translate(${xFull + size / 2},${yFull + size / 2})`
     if (rotate) {
-      transform += ` rotate(${rotate})` 
+      transform += ` rotate(${rotate})`
     }
     if (scale) {
-      transform += ` scale(${scale})` 
+      transform += ` scale(${scale})`
     }
-    transform += ` translate(${-size / 2},${-size / 2})`;
+    transform += ` translate(${-size / 2},${-size / 2})`
   }
 
-  const Component = shapesMap[name];
-  if (!Component) {
-    return null;
-  }
-  return (
+  const Component = shapesMap[name]
+
+  return Component ? (
     <Component
       size={size}
       fill={color}
@@ -56,24 +72,23 @@ export function Shape({ name, x = 0, y = 0, rotate, scale, color = "currentColor
       // x={0}
       // y={0}
     />
-  );
+  ) : null
 }
 
-
 export interface ShapeIconProps {
-  name: keyof typeof shapesMap;
-  color: string;
-  size: number;
-  viewBox?: string;
-  strokeWidth?: number;
-  transform?: string;
+  name: keyof typeof shapesMap
+  color: string
+  size: number
+  viewBox?: string
+  strokeWidth?: number
+  transform?: string
 }
 
 export const ShapeIcon = ({
-  color = "#000000",
+  color = '#000000',
   name,
   size = SIZE,
-  viewBox,
+  viewBox
 }: ShapeIconProps) => {
   return (
     <svg
@@ -81,10 +96,17 @@ export const ShapeIcon = ({
       height={size}
       viewBox={viewBox || `0 0 ${SIZE + 2} ${SIZE + 2}`}
       aria-label={name}
-      color={"#FFFFFF"}
+      color={color}
       overflow="visible"
     >
-      <Shape name={name} x={0} y={0} color={color} size={SIZE} strokeWidth={1} />
+      <Shape
+        name={name}
+        x={0}
+        y={0}
+        color={color}
+        size={SIZE}
+        strokeWidth={1}
+      />
     </svg>
-  );
-};
+  )
+}

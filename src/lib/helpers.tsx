@@ -13,6 +13,7 @@ export interface ShapeSetting {
   scale: boolean
   rotate: boolean
   color: string
+  isRandomColor: boolean
 }
 
 export interface Setting {
@@ -64,7 +65,8 @@ export const initialShapes: ShapeSetting[] = [
     odds: 10,
     scale: false,
     rotate: true,
-    color: '#fafaaa'
+    color: '#fafaaa',
+    isRandomColor: false
   },
   {
     id: 'qrs',
@@ -72,7 +74,8 @@ export const initialShapes: ShapeSetting[] = [
     odds: 30,
     scale: false,
     rotate: true,
-    color: '#fafa'
+    color: '#fafa',
+    isRandomColor: true
   }
 ]
 

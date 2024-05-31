@@ -170,10 +170,6 @@ function Home() {
                     />
                   </Stack>
                   <Stack spacing={2} direction={'row'}>
-                    <ColorPicker
-                      color={shape.color}
-                      setColor={value => updateShape(shape.id, 'color', value)}
-                    />
                     <Checkbox
                       isChecked={shape.scale}
                       onChange={e =>
@@ -189,6 +185,22 @@ function Home() {
                       }
                     >
                       rotate
+                    </Checkbox>
+                  </Stack>
+                  <Stack spacing={2} direction={'row'}>
+                    <Text>Color</Text>
+                    <ColorPicker
+                      color={shape.color}
+                      setColor={value => updateShape(shape.id, 'color', value)}
+                    />
+
+                    <Checkbox
+                      isChecked={shape.isRandomColor}
+                      onChange={e =>
+                        updateShape(shape.id, 'isRandomColor', e.target.checked)
+                      }
+                    >
+                      random
                     </Checkbox>
                   </Stack>
                 </Stack>
