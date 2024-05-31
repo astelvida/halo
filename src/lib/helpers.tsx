@@ -31,7 +31,8 @@ export const randomShape = (): ShapeSetting => ({
   odds: randomRange(0, 50),
   scale: randomBool(),
   rotate: randomBool(),
-  color: randomColor()
+  color: randomColor(),
+  isRandomColor: randomBool()
 })
 
 export type SettingName = 'width' | 'height' | 'cellSize' | 'strokeWidth'

@@ -3,6 +3,7 @@ import seedrandom from 'seedrandom'
 import SimplexNoise from 'simplex-noise'
 import { Setting, ShapeSetting } from './helpers'
 import { ShapeProps } from '../components/ShapeIcon'
+import { randomColor } from '@chakra-ui/theme-tools'
 
 export function getShapesList({
   settings,
