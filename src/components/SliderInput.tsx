@@ -11,17 +11,17 @@ import {
   Slider,
   SliderFilledTrack,
   SliderThumb,
-  SliderTrack,
-} from "@chakra-ui/react";
-import * as React from "react";
+  SliderTrack
+} from '@chakra-ui/react'
+import * as React from 'react'
 
 interface SliderInputProps {
-  label: string;
-  value: number;
-  min: number;
-  max: number;
-  step?: number;
-  onChange(value: string | number ): any;
+  label: string
+  value: number
+  min: number
+  max: number
+  step?: number
+  onChange(value: string | number): any
 }
 
 export const SliderInput = ({
@@ -30,14 +30,14 @@ export const SliderInput = ({
   max,
   step = 1,
   value,
-  onChange = () => {},
+  onChange = () => {}
 }: SliderInputProps) => {
   return (
     <Flex alignItems="center" flex="1">
       <FormLabel mb={0}>{label}</FormLabel>
       <Slider
         flex="1"
-        size={"md"}
+        size={'md'}
         colorScheme="pink"
         focusThumbOnChange={false}
         min={min}
@@ -49,26 +49,16 @@ export const SliderInput = ({
         <SliderTrack>
           <SliderFilledTrack />
         </SliderTrack>
-        <SliderThumb fontSize="xs" fontWeight="medium" boxSize="32px" bgColor="pink.500" color="white" >
+        <SliderThumb
+          fontSize="xs"
+          fontWeight="medium"
+          boxSize="32px"
+          bgColor="pink.500"
+          color="white"
+        >
           {value}
         </SliderThumb>
       </Slider>
-      {/* <NumberInput
-        maxW="70px"
-        ml="1rem"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={onChange}
-        size="sm"
-      >
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper />
-          <NumberDecrementStepper />
-        </NumberInputStepper>
-      </NumberInput> */}
     </Flex>
-  );
-};
+  )
+}

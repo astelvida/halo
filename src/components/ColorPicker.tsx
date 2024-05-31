@@ -1,18 +1,18 @@
-import { Box } from "@chakra-ui/react";
-import * as React from "react";
-import { HexColorPicker } from "react-colorful";
-import useClickOutside from "../hooks/useClickOutside";
+import { Box } from '@chakra-ui/react'
+import * as React from 'react'
+import { HexColorPicker } from 'react-colorful'
+import useClickOutside from '../hooks/useClickOutside'
 interface ColorPickerProps {
-  color: string,
+  color: string
   setColor: (value: string) => void
 }
 
 export const ColorPicker = ({ color, setColor }: ColorPickerProps) => {
-  const popover = React.useRef(null);
-  const [isOpen, toggle] = React.useState(false);
+  const popover = React.useRef(null)
+  const [isOpen, toggle] = React.useState(false)
 
-  const close = React.useCallback(() => toggle(false), []);
-  useClickOutside(popover, close);
+  const close = React.useCallback(() => toggle(false), [])
+  useClickOutside(popover, close)
 
   return (
     <Box position="relative">
@@ -27,5 +27,5 @@ export const ColorPicker = ({ color, setColor }: ColorPickerProps) => {
         </div>
       )}
     </Box>
-  );
-};
+  )
+}
