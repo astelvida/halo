@@ -30,6 +30,7 @@ import {
   rangeFieldsConfig
 } from '../lib/helpers'
 import { SliderInput } from '../components/SliderInput'
+import Values from 'values.js'
 
 interface HomeProps {}
 
@@ -194,13 +195,21 @@ function Home() {
                       setColor={value => updateShape(shape.id, 'color', value)}
                     />
 
-                    <Checkbox
+                    {/* <Checkbox
                       isChecked={shape.isRandomColor}
                       onChange={e =>
                         updateShape(shape.id, 'isRandomColor', e.target.checked)
                       }
                     >
                       random
+                    </Checkbox> */}
+                    <Checkbox
+                      isChecked={shape.isShadesColor}
+                      onChange={e =>
+                        updateShape(shape.id, 'isShadesColor', e.target.checked)
+                      }
+                    >
+                      shades
                     </Checkbox>
                   </Stack>
                 </Stack>

@@ -38,6 +38,7 @@ export const RectFill = ({
   y = 0,
   size = SIZE,
   fill,
+  stroke,
   strokeWidth = 0,
   transform = ''
 }: SvgShapeProps) => (
@@ -45,6 +46,7 @@ export const RectFill = ({
     height={size}
     width={size}
     fill={fill}
+    stroke={stroke}
     strokeWidth={strokeWidth}
     transform={transform}
   />

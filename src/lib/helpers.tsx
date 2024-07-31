@@ -14,6 +14,7 @@ export interface ShapeSetting {
   rotate: boolean
   color: string
   isRandomColor: boolean
+  isShadesColor: boolean
 }
 
 export interface Setting {
@@ -32,7 +33,8 @@ export const randomShape = (): ShapeSetting => ({
   scale: randomBool(),
   rotate: randomBool(),
   color: randomColor(),
-  isRandomColor: randomBool()
+  isRandomColor: randomBool(),
+  isShadesColor: randomBool()
 })
 
 export type SettingName = 'width' | 'height' | 'cellSize' | 'strokeWidth'

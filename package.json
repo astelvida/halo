@@ -27,7 +27,8 @@
     "react-colorful": "^5.5.1",
     "react-dom": "17.0.2",
     "seedrandom": "^3.0.5",
-    "simplex-noise": "^3.0.1"
+    "simplex-noise": "^3.0.1",
+    "values.js": "^2.1.1"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.3",
